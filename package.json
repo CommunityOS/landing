@@ -1,0 +1,54 @@
+{
+  "name": "landing",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "generate": "graphql-codegen",
+    "prestart": "npm run generate",
+    "preview": "astro preview",
+    "astro": "astro",
+    "pages:dev": "wrangler pages dev --compatibility-date=2024-02-08 -- astro dev",
+    "pages:deploy": "astro build && wrangler pages deploy ./dist",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.9.5",
+    "@astrojs/check": "^0.5.4",
+    "@astrojs/cloudflare": "^9.0.1",
+    "@astrojs/react": "^3.0.10",
+    "@astrojs/tailwind": "^5.1.0",
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
+    "astro": "^4.4.0",
+    "graphql": "^16.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.4.1"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240208.0",
+    "@graphql-codegen/cli": "^5.0.2",
+    "@graphql-codegen/client-preset": "^4.2.3",
+    "@graphql-codegen/near-operation-file-preset": "^3.0.0",
+    "@graphql-codegen/typescript-react-apollo": "^4.3.0",
+    "@parcel/watcher": "^2.4.0",
+    "@typescript-eslint/parser": "^7.0.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-astro": "^0.31.4",
+    "graphql-config": "^5.0.3",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "wrangler": "^3.28.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,astro}": "eslint --cache --fix",
+    "*.{js,jsx,ts,tsx,astro,css,md}": "prettier --write"
+  }
+}
