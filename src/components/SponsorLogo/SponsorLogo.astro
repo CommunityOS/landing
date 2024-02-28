@@ -1,0 +1,14 @@
+---
+interface Props {
+  src: string;
+}
+
+const { src } = Astro.props;
+---
+
+<li class="list-none list-image-none flex justify-center items-center">
+  <img
+    src={src}
+    class:list={["object-contain object-left w-full col-span-2 lg:col-span-1"]}
+  />
+</li>

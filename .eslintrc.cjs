@@ -55,7 +55,7 @@ module.exports = {
     {
       // Define the configuration for `<script>` tag when using `client-side-ts` processor.
       // Script in `<script>` is assigned a virtual file name with the `.ts` extension.
-      files: ["**/*.astro/*.ts", "*.astro/*.ts"],
+      files: ["**/*.astro/*.ts", "*.astro/*.ts", "**/*.ts", "*/*.ts"],
       env: {
         browser: true,
         es2020: true,

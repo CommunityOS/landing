@@ -1,4 +1,7 @@
 ---
+import "@fontsource/poppins";
+import "@fontsource/open-sans";
+
 interface Props {
   title: string;
 }
@@ -25,28 +28,23 @@ const { title } = Astro.props;
     --accent: 136, 58, 234;
     --accent-light: 224, 204, 250;
     --accent-dark: 49, 10, 101;
+    --black: 0, 0, 0;
+    --less-black: 3, 3, 3;
+    --os-teal: 76, 244, 255;
     --accent-gradient: linear-gradient(
       45deg,
       rgb(var(--accent)),
       rgb(var(--accent-light)) 30%,
       white 60%
     );
+    --page-background-gradient: linear-gradient(
+      45deg,
+      rgb(var(--black)),
+      rgb(var(--less-black))
+    );
   }
   html {
-    font-family: system-ui, sans-serif;
-    background: #13151a;
-    background-size: 224px;
-  }
-
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
+    background: rgb(var(--less-black));
+    background-image: var(--page-background-gradient);
   }
 </style>

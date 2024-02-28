@@ -1,0 +1,28 @@
+---
+interface Props {
+  title: string;
+  body: string;
+  align?: "left" | "center" | "right";
+}
+
+const { title, body, align = "cnter" } = Astro.props;
+---
+
+<li
+  class:list={[
+    "p-8 flex flex-col gap-3 bg-[#23262d] rounded-lg transition-all duration-600 ease-in-out shadow-[inset_0_0_0_1px_rgba(255,255,255,0.1)] hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500",
+    {
+      "text-left": align === "left",
+      "text-center": align === "center",
+      "text-right": align === "right",
+    },
+  ]}
+>
+  <h2 class="text-white text-2xl m-0">
+    {title}
+    <!-- <span>&rarr;</span> -->
+  </h2>
+  <p class="text-white mt-2 mb-0 text-lg">
+    {body}
+  </p>
+</li>

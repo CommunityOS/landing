@@ -1,5 +1,9 @@
+---
+import SVG from "./logo.svg";
+---
+
 <section
-  class="flex items-center h-screen"
+  class="flex items-center min-h-[98svh]"
   style="
 background-image: radial-gradient(
     circle at 29% 55%,
@@ -82,29 +86,33 @@ background-image: radial-gradient(
     transparent 76%,
     transparent 100%
   ),
-  linear-gradient(45deg, #535beb, #4c0bae);
+  var(--page-background-gradient);
 "
 >
   <div
-    class="relative items-center w-full gap-12 p-8 mx-auto lg:inline-flex lg:p-20 max-w-7xl rounded-3xl"
+    class="relative items-center w-full gap-12 p-8 py-36 mx-auto lg:inline-flex lg:p-20 max-w-7xl rounded-3xl shrink-0"
   >
     <div class="max-w-xl mx-auto text-center">
-      <div>
-        <span class="inline-flex items-center"
-          ><span
-            class="px-6 py-2 text-base font-bold text-white uppercase rounded-lg bg-white/10"
-            >CommunityOS</span
-          ></span
-        >
-        <p class="mt-8 text-5xl font-extrabold tracking-tight text-white">
-          El futuro es community-driven.
+      <div class="flex flex-col gap-4 items-center">
+        <div class="inline-flex items-center w-10/12 max-w-52 aspect-square">
+          <img src={SVG.src} class="w-full" />
+        </div>
+        <span class="inline-flex items-center">
+          <span
+            class="px-6 py-2 text-3xl font-bold text-white rounded-lg bg-white/10 font-title"
+          >
+            CommunityOS
+          </span>
+        </span>
+        <p class="mt-8 text-6xl font-extrabold tracking-tighter text-white">
+          El futuro es <span class="text-cyan-400">community-driven</span>.
         </p>
         <p class="max-w-xl mt-4 text-lg lg:text-xl text-slate-200">
           <b>CommunityOS</b> impulsa la innovación y el crecimiento en las comunidades,
           fomentando un futuro colaborativo y sostenible.
         </p>
       </div>
-      <div class="flex flex-col justify-center gap-3 mt-10 sm:flex-row">
+      <!-- <div class="flex flex-col justify-center gap-3 mt-10 sm:flex-row">
         <form
           class="w-full lg:w-auto bg-white/20 border-2 border-white/30 lg:mx-auto p-1.5 rounded-2xl"
         >
@@ -113,7 +121,7 @@ background-image: radial-gradient(
               <input
                 aria-label="Email"
                 autocomplete="email"
-                class="block w-full p-3 text-black bg-transparent border border-transparent appearance-none focus:border-slate-500 focus:outline-none focus:ring-slate-500 placeholder:text-slate-300 rounded-xl sm:text-sm"
+                class="block w-full p-3 text-white font-semibold bg-transparent border border-transparent appearance-none focus:border-slate-500 focus:outline-none focus:ring-slate-500 placeholder:text-slate-300 rounded-xl sm:text-sm"
                 placeholder="Tu Email"
                 required=""
                 type="email"
@@ -127,7 +135,7 @@ background-image: radial-gradient(
             </button>
           </div>
         </form>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>

@@ -1,0 +1,16 @@
+---
+import SponsorLogo from "../SponsorLogo/SponsorLogo.astro";
+
+import audienceview from "./audienceview.png";
+
+const images = [audienceview];
+---
+
+<div class="flex flex-col gap-6">
+  <ul
+    role="list"
+    class="grid grid-cols-[repeat(auto-fill,minmax(160px,1fr))] gap-9"
+  >
+    {images.map((src) => <SponsorLogo src={src.src} />)}
+  </ul>
+</div>
