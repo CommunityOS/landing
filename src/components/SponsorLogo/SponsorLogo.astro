@@ -1,13 +1,22 @@
 ---
 interface Props {
+  alt: string;
+  lang: string;
   src: string;
 }
 
-const { src } = Astro.props;
+const { src, alt, lang } = Astro.props;
+const ariaProps: { lang?: string } = {};
+
+if (lang) {
+  ariaProps.lang = lang;
+}
 ---
 
 <li class="list-none list-image-none flex justify-center items-center">
   <img
+    {...ariaProps}
+    alt={alt}
     src={src}
     class:list={["object-contain object-left w-full col-span-2 lg:col-span-1"]}
   />
