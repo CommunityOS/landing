@@ -4,23 +4,69 @@ import "@fontsource/open-sans";
 
 interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description = '' } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Potenciamos la vinculación y el impacto de las comunidades tecnológicas"
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="light-favicon.svg"
+      rel="icon"
+      media="(prefers-color-scheme: light)"
     />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <link href="favicon.svg" rel="icon" media="(prefers-color-scheme: dark)" />
+
+    <link
+      href="light-favicon.ico"
+      rel="icon"
+      media="(prefers-color-scheme: light)"
+    />
+    <link href="favicon.ico" rel="icon" media="(prefers-color-scheme: dark)" />
+
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#22d3ee"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#1e1e1e"
+    />
+
     <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <link rel="author" href="https://communityos.io/" />
+    <meta name="author" content="Community OS" />
+    <meta
+      name="keywords"
+      content="Comunidades, Tecnología, Personas, Potencial, Apoyo, Trabajo, Talento"
+    />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://communityos.io/" />
+    <meta
+      property="og:image"
+      content="https://communityos.io/images/og-image.jpg"
+    />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta
+      name="twitter:image"
+      content="https://communityos.io/images/og-image.jpg"
+    />
   </head>
   <body>
     <slot />

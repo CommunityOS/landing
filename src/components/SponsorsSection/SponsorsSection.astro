@@ -12,7 +12,7 @@ import gtd from "./gtd-telsur.png";
 import laboratoria from "./laboratoria.png";
 import mach from "./mach.png";
 import mediastream from "./mediastream.png";
-import microsfot from "./microsfot.png";
+import microsoft from "./microsoft.png";
 import salesforce from "./salesforce.png";
 import sofofa from "./sofofa.png";
 import softserve from "./softserve.png";
@@ -21,24 +21,29 @@ import synaptic from "./synaptic.png";
 import walmart from "./walmart.png";
 
 const images = [
-  bbk2brains,
-  bci,
-  cloudiunary,
-  coredevex,
-  elastic,
-  fch,
-  google,
-  gtd,
-  laboratoria,
-  mach,
-  mediastream,
-  microsfot,
-  salesforce,
-  sofofa,
-  softserve,
-  stripe,
-  synaptic,
-  walmart,
+  {
+    name: "BBK+2Brains",
+    alt: "B B K plus 2 Brains",
+    lang: "en",
+    image: bbk2brains,
+  },
+  { name: "BCI", alt: "B C I", lang: "es", image: bci },
+  { name: "Cloudiunary", alt: "Cloudiunary", lang: "en", image: cloudiunary },
+  { name: "coreDevX", alt: "CoreDevX", lang: "en", image: coredevex },
+  { name: "Elastic", alt: "Elastic", lang: "en", image: elastic },
+  { name: "Fundación Chile", alt: "Fundación Chile", lang: "es", image: fch },
+  { name: "Google", alt: "Google", lang: "en", image: google },
+  { name: "GTD", alt: "G T D", lang: "es", image: gtd },
+  { name: "Laboratoria", alt: "Laboratoria", lang: "es", image: laboratoria },
+  { name: "MACH", alt: "MACH", lang: "es", image: mach },
+  { name: "Mediastream", alt: "Mediastream", lang: "en", image: mediastream },
+  { name: "Microsoft", alt: "Microsoft", lang: "en", image: microsoft },
+  { name: "Salesforce", alt: "Salesforce", lang: "en", image: salesforce },
+  { name: "SOFOFA", alt: "SOFOFA", lang: "es", image: sofofa },
+  { name: "SoftServe", alt: "SoftServe", lang: "en", image: softserve },
+  { name: "Stripe", alt: "Stripe", lang: "en", image: stripe },
+  { name: "Synaptic", alt: "Synaptic", lang: "en", image: synaptic },
+  { name: "Walmart", alt: "Walmart", lang: "en", image: walmart },
 ];
 ---
 
@@ -46,10 +51,11 @@ const images = [
   <div class="text-lg text-center font-thin italic">
     Apoyaron a las comunidades miembros de CommunityOS:
   </div>
-  <ul
-    role="list"
-    class="grid grid-cols-[repeat(auto-fill,minmax(80px,1fr))] gap-9"
-  >
-    {images.map((src) => <SponsorLogo src={src.src} />)}
+  <ul class="grid grid-cols-[repeat(auto-fill,minmax(80px,1fr))] gap-9">
+    {
+      images.map(({ alt, image, lang }) => (
+        <SponsorLogo alt={alt} lang={lang} src={image.src} />
+      ))
+    }
   </ul>
 </div>
