@@ -18,11 +18,9 @@ const { title, body, align = "cnter" } = Astro.props;
     },
   ]}
 >
-  <h2 class="text-white text-2xl m-0">
-    {title}
-    <!-- <span>&rarr;</span> -->
-  </h2>
-  <p class="text-white mt-2 mb-0 text-lg">
+  {title ? <h2 class="text-white text-2xl m-0">{title}</h2> : null}
+
+  <p class:list={["text-white mb-0 text-lg", { "mt-2": !!title }]}>
     {body}
   </p>
 </li>
