@@ -1,12 +1,35 @@
 ---
-import SponsorLogo from "../SponsorLogo/SponsorLogo.astro";
-
 import nuevePuntoCinco from "./9punto5.png";
 import jscl from "./jscl.png";
 import masmujeresenux from "./masmujeresenux.png";
 import womenwhocode from "./womenwhocode.png";
 
-const images = [nuevePuntoCinco, jscl, masmujeresenux, womenwhocode];
+const images = [
+  {
+    name: "Nueve Punto Cinco",
+    alt: "Nueve Punto Cinco",
+    lang: "es",
+    image: nuevePuntoCinco,
+  },
+  {
+    name: "JavaScript Chile",
+    alt: "JavaScript Chile",
+    lang: "es",
+    image: jscl,
+  },
+  {
+    name: "Más Mujeres en UX",
+    alt: "Más Mujeres en UX",
+    lang: "es",
+    image: masmujeresenux,
+  },
+  {
+    name: "Women Who Code",
+    alt: "Women Who Code",
+    lang: "en",
+    image: womenwhocode,
+  },
+];
 ---
 
 <ul
@@ -14,16 +37,26 @@ const images = [nuevePuntoCinco, jscl, masmujeresenux, womenwhocode];
   class="grid grid-cols-[repeat(auto-fill,minmax(120px,1fr))] gap-12"
 >
   {
-    images.map((img) => (
-      <li class="list-none list-image-none flex justify-center items-center">
-        <img
-          src={img.src}
-          class:list={[
-            "object-contain object-left w-full col-span-2 lg:col-span-1",
-            // "brightness-0 invert",
-          ]}
-        />
-      </li>
-    ))
+    images.map(({ image, alt, lang }) => {
+      const ariaProps: { lang?: string } = {};
+
+      if (lang) {
+        ariaProps.lang = lang;
+      }
+
+      return (
+        <li class="list-none list-image-none flex justify-center items-center">
+          <img
+            {...ariaProps}
+            alt={alt}
+            src={image.src}
+            class:list={[
+              "object-contain object-left w-full col-span-2 lg:col-span-1",
+              // "brightness-0 invert",
+            ]}
+          />
+        </li>
+      );
+    })
   }
 </ul>
